@@ -10,14 +10,18 @@
     background: var(--bs-primary) !important;
 }
 /* Button design style here... */
-.btn{
-    padding: 8px 16px;
+.btn {
+    padding: 8px 24px;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.5;
     font-family: 'Inter', sans-serif;
     margin: 0;
     border-radius: 4px;
     text-transform: uppercase;
+}
+.btn:disabled{
+    background: #BFD1DF;
+    border-color: #BFD1DF;
 }
 .btn-primary{
     background: var(--bs-primary);
@@ -51,7 +55,13 @@
 }
 .modal-body {
     min-height: calc(100vh - 167px);
-    padding: 16px 24px 0 24px;
+    padding: 24px;
+}
+.modal-body-inner {
+    min-height: calc(100vh - 155px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .modal{
     background: rgba(0, 0, 0, 0.54);
@@ -67,11 +77,27 @@
     font-size: 18px;
     line-height: 1.3;
     color: #FFFFFF;
+    margin: 0;
 }
 
 
 
-
+/* Table style here.. */
+.table-th{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+}
+.table-td{
+    font-size: 14px;
+    line-height: 1.3;
+    color:#101828;
+    font-family: 'Inter' , sans-serif;
+    font-style: normal;
+}
 
 
 
@@ -81,4 +107,9 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+/* Type app code style here... */
+.type-app-code-wrap{
+    max-width: 320px;
 }
