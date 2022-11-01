@@ -51,9 +51,9 @@ export default function SearchAppCode(props) {
         </div>
         {/* <ModalFooter disabled={disabled} cancel='cancel' next = 'CREATE NEW ONBOARDING REQUEST' /> */}
         <footer className='modal-footer gap-3 border-top-0 px-0 pb-0'>
-            <button className='btn btn-outline-primary' onClick={handleClose}>cancel</button>
-            <button disabled={disabled} className='btn btn-primary'>CREATE NEW ONBOARDING REQUEST</button>
-    </footer>
+            <button className='btn btn-outline-primary text-uppercase' onClick={handleClose}>cancel</button>
+            <button disabled={disabled} className='btn btn-primary text-uppercase' onClick={handleClick}>CREATE NEW ONBOARDING REQUEST</button>
+        </footer>
     </div>
   )
 }
