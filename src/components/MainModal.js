@@ -5,6 +5,9 @@ import { MdClear } from "react-icons/md";
 
 import SearchAppCode from './appCode/SearchAppCode';
 import SelfAssessment from './selfAssessment/Index';
+import Services from './services/Index'
+import HorizontalStepper from './HorizontalStepper';
+import StepperControl from './StepperControl';
 
 
 
@@ -24,11 +27,13 @@ export default function MainModal(props) {
         <Modal show={modalShow} size="lg" centered>
             <Modal.Header className='bg-primary'>
                 <Modal.Title className='title-lg'>Create an Onboarding Request</Modal.Title>
-                <MdClear className='icon-lg text-white cursor-pointer'  onClick={handleClose} />
+                <button onClick={handleClose} className='btn text-white p-0'>CANCEL</button>
             </Modal.Header>
             <Modal.Body>
                 {/* <SearchAppCode handleClose={handleClose} /> */}
-                <SelfAssessment handleClose={handleClose} />
+                {/* <SelfAssessment handleClose={handleClose} /> */}
+                {/* <Services /> */}
+                <HorizontalStepper handleClose ={handleClose} />
             </Modal.Body>
         </Modal>
     </div>

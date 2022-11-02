@@ -26,7 +26,7 @@ export default function SelfAssessment(props) {
     const closeChildModal = () =>  setChildModal(false)
 
     return (
-        <div className='modal-body-inner'>
+        <div className=''>
             <div className='row'>
                 <div className='col-md-8'>
                     <h4 className='title-lg text-dark pb-3'>Self-Assessment Questions</h4>
@@ -148,7 +148,7 @@ export default function SelfAssessment(props) {
                     <AppCodeDropdown />
                 </div>
             </div>
-            <div>
+            <div className='d-none'>
                 <footer className='modal-footer gap-3 border-top-0 px-0 pb-0'>
                     <button onClick={handleClose} className='btn btn-outline-primary text-uppercase' >cancel</button>
                     <button disabled={disabled} className='btn btn-primary text-uppercase' onClick={handleClickOpenChildModal}>go to next</button>
