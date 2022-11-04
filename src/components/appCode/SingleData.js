@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function SingleData(props) {
     const {appCode, requestId, useCaseSummary, services, requstedBy, submittedOn, status} = props.data
-    console.log(status)
   return (
     <tr>
         <td className='table-td'>{appCode}</td>

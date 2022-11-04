@@ -1,24 +1,37 @@
-import React from 'react';
+// React Components
+import React, {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { MdClear } from "react-icons/md";
-
+// Custom Components
 import SearchAppCode from './appCode/SearchAppCode';
-import SelfAssessment from './selfAssessment/Index';
-import Services from './services/Index'
 import HorizontalStepper from './HorizontalStepper';
-import StepperControl from './StepperControl';
-
-
 
 export default function MainModal(props) {
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [showHorizontalStep, setShowHorizontalStep] = useState(false);
+    const [hideAppCode, setHideAppCode] = useState(true);
+    const [appCode, setAppCode] = useState('')
     const handleClose = () =>{
         setModalShow(false)
     }
     const handleOpen = () =>{
         setModalShow(true)
     }
+    const handleClick = () =>{
+        setHideAppCode(false)
+        setShowHorizontalStep(true)
+    }
+    const handleAppCode = (appcode) => {
+        setAppCode(appcode)
+    }       
+
+    useEffect(() => {
+        const handleAppCode = (appcode) => {
+            setAppCode(appcode)
+        }  
+    }, [handleAppCode])
+    
+ 
   return (
     <div>
         <div className='create-board'>
@@ -26,14 +39,16 @@ export default function MainModal(props) {
         </div>
         <Modal show={modalShow} size="lg" centered>
             <Modal.Header className='bg-primary'>
-                <Modal.Title className='title-lg'>Create an Onboarding Request</Modal.Title>
+                <Modal.Title className='title-lg'>Create an Onboarding Request {` - ${appCode}`}</Modal.Title>
                 <button onClick={handleClose} className='btn text-white p-0'>CANCEL</button>
             </Modal.Header>
             <Modal.Body>
-                {/* <SearchAppCode handleClose={handleClose} /> */}
-                {/* <SelfAssessment handleClose={handleClose} /> */}
-                {/* <Services /> */}
-                <HorizontalStepper handleClose ={handleClose} />
+                {
+                   hideAppCode && <SearchAppCode handleClick={handleClick} handleClose={handleClose} onAppCode = {handleAppCode} />
+                }
+                {
+                    showHorizontalStep && <HorizontalStepper handleClose ={handleClose} />
+                }
             </Modal.Body>
         </Modal>
     </div>

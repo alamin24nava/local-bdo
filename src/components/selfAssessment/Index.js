@@ -5,20 +5,56 @@ import AppCodeDropdown from '../AppCodeDropdown'
 const primaryTxt = 'Based on your answers you are qualified to onboard to: Public Cloud only'
 const secondaryTxt = 'Click Continue to proceed with the request'
 export default function SelfAssessment(props) {
+    const handleChange = props.handleChange
     const handleClose = props.handleClose
-    const [disabled, setDisabled] = useState(true)
-    const [value, setValue] = useState({ questionOn: '', questionTwo: '', questionThree: '', questionFour: '', questionFive: '', questionSix: '', questionSeven: '' })
-    const { questionOn, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven } = value
-    const handleChange = (e) => {
-        let value = e.target.value
-        let fieldName = e.target.name
-        setValue({ ...value, [fieldName]: value })
-    }
-    useEffect(() => {
-        if (questionOn, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven) {
-            setDisabled(false)
-        }
-    }, [questionOn, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven])
+
+    // const [questionOn, setQuestionOn] = useState('')
+    // const [questionTwo, setQuestionTwo] = useState('')
+    // const [questionThree, setQuestionThree] = useState('')
+    // const [questionFour, setQuestionFour] = useState('')
+    // const [questionFive, setQuestionFive] = useState('')
+    // const [questionSix, setQuestionSix] = useState('')
+    // const [questionSeven, setQuestionSeven] = useState('')
+    // const handleChange = (e) => {
+    //     let value = e.target.value
+    //     let fieldName = e.target.name
+        
+    //     if(fieldName === 'questionOn'){
+    //         setQuestionOn(value)
+    //         console.log(questionOn)
+    //     }
+    //     if(fieldName === 'questionTwo'){
+    //         setQuestionTwo(value)
+    //         console.log(questionTwo)
+    //     }
+    //     if(fieldName === 'questionThree'){
+    //         setQuestionThree(value)
+    //         console.log(questionThree)
+    //     }
+    //     if(fieldName === 'questionFour'){
+    //         setQuestionFour(value)
+    //         console.log(questionFour)
+    //     }
+    //     if(fieldName === 'questionFive'){
+    //         setQuestionFive(value)
+    //         console.log(questionFive)
+    //     }
+    //     if(fieldName === 'questionSix'){
+    //         setQuestionSix(value)
+    //         console.log(questionSix)
+    //     }
+    //     if(fieldName === 'questionSeven'){
+    //         setQuestionSeven(value)
+    //         console.log(questionSeven)
+    //     }
+    // }
+
+
+    // useEffect(() => {
+    //     if (questionOn, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven) {
+    //         props.onDataQuestion(questionOn, questionTwo)
+    //     }
+    // }, [questionOn, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven])
 
 
     const [childModal, setChildModal] = useState(false)
@@ -35,7 +71,7 @@ export default function SelfAssessment(props) {
                             <p className='question'>Q1: Is your application a SOX/SOC1 app? <span className='text-danger'>*</span></p>
                             <div >
                                 <div className="form-check form-check-inline">
-                                    <input onChange={handleChange} className="form-check-input" type="radio" name="questionOn" id="questionOn1" value="Yes, SOX" />
+                                    <input onChange={handleChange} className="form-check-input" type="radio" name="questionOn" id="questionOn1" value={props.questionOn} />
                                     <label className="form-check-label" htmlFor="questionOn1">Yes, SOX</label>
                                 </div>
                                 <div className="form-check form-check-inline">
@@ -148,7 +184,7 @@ export default function SelfAssessment(props) {
                     <AppCodeDropdown />
                 </div>
             </div>
-            <div className='d-none'>
+            {/* <div className='d-none'>
                 <footer className='modal-footer gap-3 border-top-0 px-0 pb-0'>
                     <button onClick={handleClose} className='btn btn-outline-primary text-uppercase' >cancel</button>
                     <button disabled={disabled} className='btn btn-primary text-uppercase' onClick={handleClickOpenChildModal}>go to next</button>
@@ -156,7 +192,7 @@ export default function SelfAssessment(props) {
                 <div>
                     <ChildModal childModal={childModal} closeChildModal={closeChildModal} primaryTxt={primaryTxt} secondaryTxt={secondaryTxt} title='recommended' />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -6,6 +6,9 @@ import ModalFooter from './ModalFooter';
 
 export default function SearchAppCode(props) {
     const handleClose = props.handleClose
+    const handleClick = props.handleClick
+    const onAppCode = props.onAppCode
+
     const [appCode, setAppCode] = useState('')
     const [open, setOpen] = useState(false)
     const [error, setError] = useState(false)
@@ -14,7 +17,9 @@ export default function SearchAppCode(props) {
         const value = e.target.value
         const feildName = e.target.name
         if(feildName === 'appCode'){
-            setAppCode(value)
+            setAppCode(value.toUpperCase())
+            onAppCode(appCode)
+
             if(appCode.length == 3 ){
                 setOpen(true)
                 setError(false)
@@ -27,18 +32,14 @@ export default function SearchAppCode(props) {
         }
     }
 
-    const handleClick = () =>{
-        console.log(123)
-    }
-
   return (
     <div className='modal-body-inner'>
         <div className=''>
             <h4 className='title-lg text-dark pb-3'>Enter an App Code to begin the onboarding process</h4>
             <form  className='mb-4 d-flex align-items-start gap-3'>
                 <div className="type-app-code-wrap position-relative w-100">
-                    <input onChange={handleChange} name='appCode' type="text" className="form-control" placeholder="Type your App Code here" />
-                    <MdSearch onClick={handleClick} className='icon-lg position-absolute top-50 end-0 cursor-pointer translate-middle' />
+                    <input onChange={handleChange} name='appCode' type="text" className="form-control text-uppercase" placeholder="Type your App Code here" />
+                    <MdSearch onClick={handleClick} className='icon-lg position-absolute top-50 end-0 cursor-pointer translate-middle text-secondary' />
                 </div>
                 {
                     error && <div className='text-danger w-25'>The App Code you provided is invalid. App Code must have 2 characters and 2 numbers. </div>

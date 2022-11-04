@@ -11,7 +11,7 @@ export default function Index() {
                     <h4 className='title-lg text-dark pb-3'>Choose services you want to add</h4>
                     <form className='position-relative'>
                         <input type="text" className="form-control ps-5 w-75" name="servicesGroup" placeholder='Search by Service Name or Group'/>
-                        <RiSearchLine className='position-absolute top-50 start-3 translate-middle-y'/>
+                        <RiSearchLine className='position-absolute top-50 start-3 translate-middle-y text-secondary'/>
                     </form>
                 </div>
                 <div className='col-md-4'>
