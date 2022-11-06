@@ -3,15 +3,15 @@ import DataModel from '../Model/DataModel'
 import SingleData from './appCode/SingleData'
 
 const dataList = [
-    DataModel('XD98', '13252','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'Non-PROD Qualification'),
-    DataModel('XD96', '13252','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'Draft'),
-    DataModel('XD92', '13252','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'PROD Readiness'),
-    DataModel('XD99', '13252','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'Non-PROD Qualification')
+    DataModel('XD98', '13252','Project name, initiative summar...', 'Service 1, Service 2', 'Marsh deo', 'July 27, 2022', 'Non-PROD Qualification'),
+    DataModel('FG34', '98754','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'Draft'),
+    DataModel('LK59', '25487','Project name, initiative summar...', 'Service 1, Service 2', 'alamin Smith', 'July 27, 2022', 'PROD Readiness'),
+    DataModel('MG74', '12849','Project name, initiative summar...', 'Service 1, Service 2', 'Tailor Smith', 'July 27, 2022', 'Non-PROD Qualification')
 ]
 export default function DataTable() {
     return (
         <div>
-            <h4 className='title-lg text-dark'>Requests (3)</h4>
+            <h4 className='title-lg text-dark'>Requests ({dataList.length})</h4>
             <table className="table">
                 <thead>
                     <tr>
